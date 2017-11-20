@@ -3,6 +3,8 @@ package com.hendisantika.demoonetomany.repository;
 import com.hendisantika.demoonetomany.domain.Department;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * Project : demo-one-to-many
@@ -14,4 +16,5 @@ import org.springframework.data.repository.CrudRepository;
  * To change this template use File | Settings | File Templates.
  */
 public interface DepartmentRepository extends CrudRepository<Department, Long> {
+    List<Department> findAll();
 }
