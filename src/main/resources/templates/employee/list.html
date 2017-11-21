@@ -12,7 +12,7 @@
     <hr/>
     <table class="table table-bordered">
         <tr>
-            <th>S.No</th>
+            <th>No</th>
             <th>Name</th>
             <th>Email</th>
             <th>Address</th>
@@ -20,16 +20,16 @@
             <th>Action</th>
         </tr>
         <tr th:each="emp,itr : ${employees}">
-            <td th:text="${itr.count}">S.No</td>
+            <td th:text="${itr.count}">No</td>
             <td th:text="${emp.name}">Name</td>
             <td th:text="${emp.email}">Email</td>
-            <td th:text="${emp.address.address}">Address</td>
-            <td>
-                <a class="btn btn-link" th:href="@{'/department/show/' + ${emp.department.id}}">
-                    <span th:text="${emp.department.name}">Department Name</span>
-                </a>
-            </td>
-            <td><a class="btn btn-primary" th:href="@{'/employee/show/' + ${emp.id}}">View</a></td>
+            <!--<td th:text="${emp.address.address}">Address</td>-->
+            <!--<td>-->
+                <!--<a class="btn btn-link" th:href="@{'/department/show/' + ${emp.department.id}}">-->
+                    <!--<span th:text="${emp.department.name}">Department Name</span>-->
+                <!--</a>-->
+            <!--</td>-->
+            <!--<td><a class="btn btn-primary" th:href="@{'/employee/show/' + ${emp.id}}">View</a></td>-->
         </tr>
     </table>
 </div>
