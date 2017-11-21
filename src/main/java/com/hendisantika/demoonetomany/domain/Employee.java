@@ -36,6 +36,17 @@ public class Employee {
     @ManyToOne(fetch = FetchType.EAGER)
     private Department department;
 
+    public Employee() {
+    }
+
+    public Employee(String email, String name, String password, Address address, Department department) {
+        this.email = email;
+        this.name = name;
+        this.password = password;
+        this.address = address;
+        this.department = department;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
