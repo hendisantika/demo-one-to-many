@@ -31,6 +31,11 @@ public class Address {
     @OneToOne(fetch = FetchType.LAZY)
     private Employee employee;
 
+    public Address() {
+    }
+
+
+
     @Override
     public String toString() {
         return "Address{" +
@@ -42,6 +47,9 @@ public class Address {
                 '}';
     }
 
+    public Address(String address) {
+        this.address = address;
+    }
 
     public long getId() {
         return id;
