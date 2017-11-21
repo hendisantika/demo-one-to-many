@@ -24,7 +24,9 @@ import java.util.List;
 public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
-    @Autowired private DepartmentRepository departmentRepository;
+
+    @Autowired
+    private DepartmentRepository departmentRepository;
 
     public Object list() {
         return employeeRepository.findAll();
