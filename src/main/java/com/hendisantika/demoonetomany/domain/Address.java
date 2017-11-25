@@ -21,10 +21,10 @@ public class Address {
     private long id;
 
     @Temporal(TemporalType.TIMESTAMP)
-    protected Date dateCreated;
+    protected Date dateCreated =  new Date();
 
     @Temporal(TemporalType.TIMESTAMP)
-    protected Date lastUpdated;
+    protected Date lastUpdated =  new Date();
 
     private String address;
 
