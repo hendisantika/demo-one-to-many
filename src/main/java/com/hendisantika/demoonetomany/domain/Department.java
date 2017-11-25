@@ -22,10 +22,10 @@ public class Department {
     private long id;
 
     @Temporal(TemporalType.TIMESTAMP)
-    protected Date dateCreated;
+    protected Date dateCreated =  new Date();
 
     @Temporal(TemporalType.TIMESTAMP)
-    protected Date lastUpdated;
+    protected Date lastUpdated =  new Date();
 
     private String name;
 
@@ -33,6 +33,13 @@ public class Department {
     private List<Employee> employees;
 
     public Department() {
+    }
+
+    public Department(Date dateCreated, Date lastUpdated, String name, List<Employee> employees) {
+        this.dateCreated = dateCreated;
+        this.lastUpdated = lastUpdated;
+        this.name = name;
+        this.employees = employees;
     }
 
     public Department(String name) {
