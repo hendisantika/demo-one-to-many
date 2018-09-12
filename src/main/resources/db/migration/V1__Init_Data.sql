@@ -1,8 +1,3 @@
--- CREATE DATABASE "jpa_mapping" ---------------------------
-CREATE DATABASE IF NOT EXISTS `jpa_mapping` CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `jpa_mapping`;
--- ---------------------------------------------------------
-
 -- CREATE TABLE "address" --------------------------------------
 CREATE TABLE `address` ( 
 	`id` BigInt( 20 ) AUTO_INCREMENT NOT NULL,
