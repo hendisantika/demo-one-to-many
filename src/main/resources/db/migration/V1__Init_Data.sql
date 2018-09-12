@@ -1,23 +1,8 @@
--- Valentina Studio --
--- MySQL dump --
--- ---------------------------------------------------------
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
--- ---------------------------------------------------------
-
-
 -- CREATE DATABASE "jpa_mapping" ---------------------------
 CREATE DATABASE IF NOT EXISTS `jpa_mapping` CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `jpa_mapping`;
 -- ---------------------------------------------------------
 
-
--- CREATE TABLE "address" ----------------------------------
 -- CREATE TABLE "address" --------------------------------------
 CREATE TABLE `address` ( 
 	`id` BigInt( 20 ) AUTO_INCREMENT NOT NULL,
@@ -30,11 +15,8 @@ CHARACTER SET = latin1
 COLLATE = latin1_swedish_ci
 ENGINE = InnoDB
 AUTO_INCREMENT = 8;
--- -------------------------------------------------------------
 -- ---------------------------------------------------------
 
-
--- CREATE TABLE "department" -------------------------------
 -- CREATE TABLE "department" -----------------------------------
 CREATE TABLE `department` ( 
 	`id` BigInt( 20 ) AUTO_INCREMENT NOT NULL,
@@ -50,7 +32,6 @@ AUTO_INCREMENT = 6;
 -- ---------------------------------------------------------
 
 
--- CREATE TABLE "employee" ---------------------------------
 -- CREATE TABLE "employee" -------------------------------------
 CREATE TABLE `employee` ( 
 	`id` BigInt( 20 ) AUTO_INCREMENT NOT NULL,
@@ -69,7 +50,6 @@ AUTO_INCREMENT = 8;
 -- ---------------------------------------------------------
 
 
--- CREATE TABLE "husband" ----------------------------------
 -- CREATE TABLE "husband" --------------------------------------
 CREATE TABLE `husband` ( 
 	`id` Int( 11 ) AUTO_INCREMENT NOT NULL,
@@ -83,7 +63,6 @@ AUTO_INCREMENT = 4;
 -- ---------------------------------------------------------
 
 
--- CREATE TABLE "wife" -------------------------------------
 -- CREATE TABLE "wife" -----------------------------------------
 CREATE TABLE `wife` ( 
 	`id` Int( 11 ) AUTO_INCREMENT NOT NULL,
@@ -139,28 +118,24 @@ INSERT INTO `wife`(`id`,`name`,`husband_id`) VALUES ( '3', 'Lauren', '3' );
 -- ---------------------------------------------------------
 
 
--- CREATE INDEX "FKq4m60pqp7shng4u5n9h2346mp" --------------
 -- CREATE INDEX "FKq4m60pqp7shng4u5n9h2346mp" ------------------
 CREATE INDEX `FKq4m60pqp7shng4u5n9h2346mp` USING BTREE ON `address`( `employee_id` );
 -- -------------------------------------------------------------
 -- ---------------------------------------------------------
 
 
--- CREATE INDEX "FKbejtwvg9bxus2mffsm3swj3u9" --------------
 -- CREATE INDEX "FKbejtwvg9bxus2mffsm3swj3u9" ------------------
 CREATE INDEX `FKbejtwvg9bxus2mffsm3swj3u9` USING BTREE ON `employee`( `department_id` );
 -- -------------------------------------------------------------
 -- ---------------------------------------------------------
 
 
--- CREATE INDEX "FK36i07024g7wxwskm9rdalh5co" --------------
 -- CREATE INDEX "FK36i07024g7wxwskm9rdalh5co" ------------------
 CREATE INDEX `FK36i07024g7wxwskm9rdalh5co` USING BTREE ON `wife`( `husband_id` );
 -- -------------------------------------------------------------
 -- ---------------------------------------------------------
 
 
--- CREATE LINK "FKq4m60pqp7shng4u5n9h2346mp" ---------------
 -- CREATE LINK "FKq4m60pqp7shng4u5n9h2346mp" -------------------
 ALTER TABLE `address`
 	ADD CONSTRAINT `FKq4m60pqp7shng4u5n9h2346mp` FOREIGN KEY ( `employee_id` )
@@ -171,7 +146,6 @@ ALTER TABLE `address`
 -- ---------------------------------------------------------
 
 
--- CREATE LINK "FKbejtwvg9bxus2mffsm3swj3u9" ---------------
 -- CREATE LINK "FKbejtwvg9bxus2mffsm3swj3u9" -------------------
 ALTER TABLE `employee`
 	ADD CONSTRAINT `FKbejtwvg9bxus2mffsm3swj3u9` FOREIGN KEY ( `department_id` )
@@ -182,7 +156,6 @@ ALTER TABLE `employee`
 -- ---------------------------------------------------------
 
 
--- CREATE LINK "FK36i07024g7wxwskm9rdalh5co" ---------------
 -- CREATE LINK "FK36i07024g7wxwskm9rdalh5co" -------------------
 ALTER TABLE `wife`
 	ADD CONSTRAINT `FK36i07024g7wxwskm9rdalh5co` FOREIGN KEY ( `husband_id` )
@@ -190,14 +163,6 @@ ALTER TABLE `wife`
 	ON DELETE Restrict
 	ON UPDATE Restrict;
 -- -------------------------------------------------------------
--- ---------------------------------------------------------
-
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 -- ---------------------------------------------------------
 
 
