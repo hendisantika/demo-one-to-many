@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by IntelliJ IDEA.
@@ -40,7 +41,7 @@ public class DepartmentService {
         return departmentRepository.save(department);
     }
 
-    public Department get(long id) {
-        return departmentRepository.findOne(id);
+    public Optional<Department> get(long id) {
+        return departmentRepository.findById(id);
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by IntelliJ IDEA.
@@ -34,8 +35,8 @@ public class EmployeeService {
 
     public Employee save(Employee employee) {
         employee.getAddress().setEmployee(employee);
-        Department department = departmentRepository.findOne(employee.getDepartment().getId());
-        employee.setDepartment(department);
+        Optional<Department> department = departmentRepository.findById(employee.getDepartment().getId());
+        employee.setDepartment(department.get());
         return employeeRepository.save(employee);
     }
 
@@ -54,7 +55,7 @@ public class EmployeeService {
     }
 
     public void delete(long id) {
-        employeeRepository.delete(id);
+        employeeRepository.deleteById(id);
     }
 
     public List<Employee> list(long departmentId) {

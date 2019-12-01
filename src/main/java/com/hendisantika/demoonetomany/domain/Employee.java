@@ -17,7 +17,7 @@ import java.util.Date;
 @Entity
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected long id;
 
     @Temporal(TemporalType.TIMESTAMP)
