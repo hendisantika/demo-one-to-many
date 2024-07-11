@@ -1,12 +1,12 @@
 plugins {
-	id 'org.springframework.boot' version '3.2.9'
+	id 'org.springframework.boot' version '3.3.0'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
 }
 
 group = 'com.hendisantika'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '21'
 
 configurations {
 	developmentOnly
@@ -28,7 +28,7 @@ dependencies {
 	implementation group: 'net.sourceforge.nekohtml', name: 'nekohtml', version: '1.9.22'
 	implementation('org.springframework.boot:spring-boot-starter')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	runtimeOnly 'mysql:mysql-connector-java'
+	runtimeOnly 'com.mysql:mysql-connector-j'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
